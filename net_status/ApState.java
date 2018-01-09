@@ -9,16 +9,16 @@ import android.net.wifi.WifiManager;
  * 功能描述：开启热点状态
  */
 public class ApState extends NetStatus {
-//    private WifiUtil wifiUtil;
+//    private NetStatusUtil wifiUtil;
     private Context appContext;
     //单例代码
     private volatile static ApState instance;
-    private ApState(Context context/*, WifiUtil wifiUtil*/) {
+    private ApState(Context context/*, NetStatusUtil wifiUtil*/) {
         super(context);
         appContext = context.getApplicationContext();
 //        this.wifiUtil = wifiUtil;
     }
-    public static ApState getInstance(Context context/*, WifiUtil wifiUtil*/){
+    public static ApState getInstance(Context context/*, NetStatusUtil wifiUtil*/){
         if(instance == null){
             synchronized (ApState.class){
                 if(instance == null){

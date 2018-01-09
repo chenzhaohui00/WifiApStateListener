@@ -3,7 +3,7 @@ package com.test.mytest.util.net_status;
 import android.content.Context;
 import android.net.wifi.WifiManager;
 
-import com.test.mytest.util.WifiUtil;
+import com.test.mytest.util.NetStatusUtil;
 
 /**
  * 创建时间：2018/1/4;
@@ -11,17 +11,17 @@ import com.test.mytest.util.WifiUtil;
  * 功能描述：连接wifi状态
  */
 public class ConnectedWifiState extends NetStatus {
-    private WifiUtil util;
+    private NetStatusUtil util;
     private Context appContext;
 
     private volatile static ConnectedWifiState instance;
-    private ConnectedWifiState(Context context/*, WifiUtil wifiUtil*/){
+    private ConnectedWifiState(Context context/*, NetStatusUtil wifiUtil*/){
         super(context);
         appContext = context.getApplicationContext();
 //        util = wifiUtil;
     }
 
-    public static ConnectedWifiState getInstance(Context context/*, WifiUtil wifiUtil*/){
+    public static ConnectedWifiState getInstance(Context context/*, NetStatusUtil wifiUtil*/){
         if(instance == null){
             synchronized (ConnectedWifiState.class){
                 if(instance == null){
